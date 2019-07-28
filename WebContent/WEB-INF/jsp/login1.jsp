@@ -23,19 +23,19 @@
 	</br>
 	</br>
 	</br>
-	<form class="form-horizontal">
+	<form class="form-horizontal" action="checkLogin" method="post">
 		<div class="form-group" align="center">
 			<span class="glyphicon glyphicon-user" aria-hidden="true" align="center"></span>
 			<label for="inputEmail3" class="col-sm-2 control-label">账户名</label>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" id="inputEmail3"
+				<input type="text" class="form-control" id="inputEmail3" name="username"
 					placeholder="账户名">
 			</div>
 		</div>
 		<div class="form-group" align="center">
 			<label for="inputPassword3" class="col-sm-2 control-label">密码</label>
 			<div class="col-sm-3">
-				<input type="password" class="form-control" id="inputPassword3"
+				<input type="password" class="form-control" id="inputPassword3" name="password"
 					placeholder="Password">
 			</div>
 		</div>

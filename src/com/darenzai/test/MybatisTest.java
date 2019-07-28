@@ -23,20 +23,20 @@ public class MybatisTest {
 	
 	
 	
-	@Test
-	public void testAdd() {
-		for (int i = 0; i <15; i++) {
-			Swb swb = new Swb();
-			
-			swb.setDorm(101);
-			swb.setTime("2019-3-16");
-			swb.setDengji("优");
-			swb.setReason("被子没叠，书不齐，灯未关");
-			swb.setTongbao("通报");
-			swbMapper.add(swb);
-		}
-
-	}
+//	@Test
+//	public void testAdd() {
+//		for (int i = 0; i <15; i++) {
+//			Swb swb = new Swb();
+//			
+//			swb.setDorm(101);
+//			swb.setTime("2019-3-16");
+//			swb.setDengji("优");
+//			swb.setReason("被子没叠，书不齐，灯未关");
+//			swb.setTongbao("通报");
+//			swbMapper.add(swb);
+//		}
+//
+//	}
 	/**
 	 * 
 	

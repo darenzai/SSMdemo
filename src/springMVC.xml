@@ -20,10 +20,16 @@
           expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <mvc:annotation-driven />
+   	<mvc:annotation-driven >
+       <mvc:message-converters register-defaults="true">
+          <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+             <property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+          </bean>
+       </mvc:message-converters>   
+    </mvc:annotation-driven>
     
     <mvc:default-servlet-handler />
-
+    
 
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -37,9 +43,9 @@
     	<mvc:interceptor>
 			<mvc:mapping path="/**"/>  
 			<mvc:exclude-mapping path="/login"/>
-			<mvc:exclude-mapping path="/checkLogin"/>
-			<bean class="com.darenzai.interceptor.LoginInterceptor"></bean> 	
+		    <mvc:exclude-mapping path="/checkLogin"/>
+	  		<bean class="com.darenzai.interceptor.LoginInterceptor"></bean> 	
     	</mvc:interceptor>
     </mvc:interceptors>
-    
+   
 </beans>

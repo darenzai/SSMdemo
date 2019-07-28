@@ -44,11 +44,6 @@
 	    	values (#{username},#{password})
 	    </insert>
 	    
-	    
-	    <!-- 
-	    <select id="total" resultType="int">
-	        select count(*) from swb        
-	    </select>	
-	     -->    	    
+	      
 	</mapper>
 

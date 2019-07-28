@@ -2,6 +2,7 @@ package com.darenzai.controller;
 
 
 import java.util.List;
+import java.util.NavigableSet;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.darenzai.pojo.Swb;
@@ -21,13 +24,30 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.mysql.cj.Session;
 
+
 // 告诉spring mvc这是一个控制器类
 @Controller
 @RequestMapping("")
 public class SwbController {
 	@Autowired
 	SwbService SwbService;
-
+	
+//	@RequestMapping("listSwb")
+//	@ResponseBody
+//	public PageInfo  listCategory1(@RequestParam(value="pn",defaultValue ="1")Integer pn, Model model){
+//		
+//		List<Swb> cs= SwbService.list();
+//		PageInfo page =new PageInfo(cs);
+//		
+//		
+//		return page;
+//	}
+	
+	
+	
+	
+	
+	 
 	@RequestMapping("listSwb")
 	public ModelAndView listCategory(Page page){
 	
@@ -43,6 +63,8 @@ public class SwbController {
 		mav.setViewName("listSwb");
 		return mav;
 	}
+	
+	
 	@RequestMapping("editSwb")
 	public ModelAndView editSwb(HttpServletRequest req){
 		ModelAndView mav = new ModelAndView();
@@ -88,7 +110,7 @@ public class SwbController {
 	
 	@RequestMapping("/login")
 	public String login(){
-		return "login";
+		return "login1";
 	}
 	@RequestMapping("checkLogin")
 	public String chckLogin(User user,Model model,HttpSession session) {
@@ -110,7 +132,7 @@ public class SwbController {
 	public String outLogin(HttpSession session) {
 		
 		session.invalidate();
-		return "login";
+		return "login1";
 	}
 	
 	@RequestMapping("updateSwb")
@@ -118,6 +140,11 @@ public class SwbController {
 		SwbService.update(swb);
 		ModelAndView mav = new ModelAndView("redirect:/listSwb");
 		return mav;
-	}	
+	}
+	@RequestMapping("charts")
+	public String charts() {
+		return "charts";
+	}
+	
 
 }
